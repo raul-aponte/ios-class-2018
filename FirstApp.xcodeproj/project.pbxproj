@@ -14,6 +14,13 @@
 		C4455C8B203DE52A00A70056 /* FirstApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C4455C89203DE52A00A70056 /* FirstApp.xcdatamodeld */; };
 		C4455C8D203DE52A00A70056 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4455C8C203DE52A00A70056 /* Assets.xcassets */; };
 		C4455C90203DE52A00A70056 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4455C8E203DE52A00A70056 /* LaunchScreen.storyboard */; };
+		C45F9258205040CB00332E9B /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45F9257205040CB00332E9B /* Connection.swift */; };
+		C45F925C2050456E00332E9B /* RepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45F925A2050456E00332E9B /* RepositoryCell.swift */; };
+		C45F925D2050456E00332E9B /* RepositoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C45F925B2050456E00332E9B /* RepositoryCell.xib */; };
+		C45F9260205046C800332E9B /* Repositories.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C45F925F205046C800332E9B /* Repositories.storyboard */; };
+		C45F9263205049DC00332E9B /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45F9262205049DC00332E9B /* Repository.swift */; };
+		C45F926620504A5D00332E9B /* RepositoriesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45F926520504A5D00332E9B /* RepositoriesController.swift */; };
+		C45F926820504C8C00332E9B /* RepositoryClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45F926720504C8C00332E9B /* RepositoryClient.swift */; };
 		C48782B0204DA42100144F3B /* SessionClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48782AF204DA42100144F3B /* SessionClient.swift */; };
 		C48782B2204DA42B00144F3B /* BaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48782B1204DA42B00144F3B /* BaseClient.swift */; };
 		C48782B5204DB1A600144F3B /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48782B4204DB1A600144F3B /* Settings.swift */; };
@@ -31,6 +38,13 @@
 		C4455C8C203DE52A00A70056 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C4455C8F203DE52A00A70056 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C4455C91203DE52A00A70056 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C45F9257205040CB00332E9B /* Connection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
+		C45F925A2050456E00332E9B /* RepositoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCell.swift; sourceTree = "<group>"; };
+		C45F925B2050456E00332E9B /* RepositoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryCell.xib; sourceTree = "<group>"; };
+		C45F925F205046C800332E9B /* Repositories.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Repositories.storyboard; sourceTree = "<group>"; };
+		C45F9262205049DC00332E9B /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		C45F926520504A5D00332E9B /* RepositoriesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesController.swift; sourceTree = "<group>"; };
+		C45F926720504C8C00332E9B /* RepositoryClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryClient.swift; sourceTree = "<group>"; };
 		C48782AF204DA42100144F3B /* SessionClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionClient.swift; sourceTree = "<group>"; };
 		C48782B1204DA42B00144F3B /* BaseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseClient.swift; sourceTree = "<group>"; };
 		C48782B4204DB1A600144F3B /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
@@ -88,25 +102,64 @@
 		C4455C81203DE52A00A70056 /* FirstApp */ = {
 			isa = PBXGroup;
 			children = (
+				C4455C82203DE52A00A70056 /* AppDelegate.swift */,
 				C48782B6204DB4D400144F3B /* Extensions */,
 				C48782AE204DA40700144F3B /* Network */,
+				C45F92612050497100332E9B /* Models */,
 				C48782B3204DB16B00144F3B /* Utils */,
-				C4455C82203DE52A00A70056 /* AppDelegate.swift */,
-				C4455C84203DE52A00A70056 /* LoginController.swift */,
-				C4455C86203DE52A00A70056 /* Main.storyboard */,
+				C45F92592050451A00332E9B /* Views */,
+				C45F926420504A1700332E9B /* Controllers */,
+				C45F925E2050467100332E9B /* Storyboard */,
 				C4455C8C203DE52A00A70056 /* Assets.xcassets */,
-				C4455C8E203DE52A00A70056 /* LaunchScreen.storyboard */,
 				C4455C91203DE52A00A70056 /* Info.plist */,
 				C4455C89203DE52A00A70056 /* FirstApp.xcdatamodeld */,
 			);
 			path = FirstApp;
 			sourceTree = "<group>";
 		};
+		C45F92592050451A00332E9B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C45F925A2050456E00332E9B /* RepositoryCell.swift */,
+				C45F925B2050456E00332E9B /* RepositoryCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C45F925E2050467100332E9B /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				C4455C8E203DE52A00A70056 /* LaunchScreen.storyboard */,
+				C4455C86203DE52A00A70056 /* Main.storyboard */,
+				C45F925F205046C800332E9B /* Repositories.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		C45F92612050497100332E9B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C45F9262205049DC00332E9B /* Repository.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C45F926420504A1700332E9B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C4455C84203DE52A00A70056 /* LoginController.swift */,
+				C45F926520504A5D00332E9B /* RepositoriesController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		C48782AE204DA40700144F3B /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				C45F9257205040CB00332E9B /* Connection.swift */,
 				C48782B1204DA42B00144F3B /* BaseClient.swift */,
 				C48782AF204DA42100144F3B /* SessionClient.swift */,
+				C45F926720504C8C00332E9B /* RepositoryClient.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -189,9 +242,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C45F9260205046C800332E9B /* Repositories.storyboard in Resources */,
 				C4455C90203DE52A00A70056 /* LaunchScreen.storyboard in Resources */,
 				C4455C8D203DE52A00A70056 /* Assets.xcassets in Resources */,
 				C4455C88203DE52A00A70056 /* Main.storyboard in Resources */,
+				C45F925D2050456E00332E9B /* RepositoryCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,11 +317,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C45F926620504A5D00332E9B /* RepositoriesController.swift in Sources */,
+				C45F925C2050456E00332E9B /* RepositoryCell.swift in Sources */,
 				C48782B5204DB1A600144F3B /* Settings.swift in Sources */,
 				C48782B8204DB4EB00144F3B /* UITextField+Extensions.swift in Sources */,
 				C4455C8B203DE52A00A70056 /* FirstApp.xcdatamodeld in Sources */,
+				C45F9258205040CB00332E9B /* Connection.swift in Sources */,
 				C48782B2204DA42B00144F3B /* BaseClient.swift in Sources */,
 				C48782B0204DA42100144F3B /* SessionClient.swift in Sources */,
+				C45F926820504C8C00332E9B /* RepositoryClient.swift in Sources */,
+				C45F9263205049DC00332E9B /* Repository.swift in Sources */,
 				C4455C85203DE52A00A70056 /* LoginController.swift in Sources */,
 				C4455C83203DE52A00A70056 /* AppDelegate.swift in Sources */,
 			);

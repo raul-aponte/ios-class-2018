@@ -40,7 +40,11 @@ class LoginController: UIViewController {
     }
 
     private func successfulLogin() {
-        
+        Settings.userMail = userTextField.textValue
+        let storyboard = UIStoryboard(name: "Repositories", bundle: nil)
+        if let controller = storyboard.instantiateInitialViewController() {
+            present(controller, animated: true)
+        }
     }
 
 }

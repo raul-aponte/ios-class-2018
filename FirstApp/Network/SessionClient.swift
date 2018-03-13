@@ -3,8 +3,13 @@ import Alamofire
 
 class SessionClient: BaseClient {
     func login(user: String, password: String, callback: @escaping (String?) -> Void) {
-        let params = ["username": user]
-        Alamofire.request(baseUrl, method: .post, parameters: params, encoding: JSONEncoding.default).responseJSON { (response) in
+        let url = "\(baseUrl)/authorizations"
+        let params = [
+            "note": "admin script",
+            "client_id": Connection.clientId,
+            "client_secret": Connection.clientSecret
+        ]
+        Alamofire.request(url, method: .post, parameters: params, encoding: JSONEncoding.default).responseJSON { (response) in
             print(response)
             response.result.ifSuccess {
                 callback("")
