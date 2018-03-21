@@ -28,7 +28,7 @@ final class RepositoriesController: UIViewController {
             Repository(name: "Blah 2"),
             Repository(name: "Blah 3"),
             Repository(name: "Blah 4"),
-            Repository(name: "Blah 5")
+            Repository(name: "Blah 5"),
         ]
     }
 
