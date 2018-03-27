@@ -22,7 +22,7 @@ class LoginController: UIViewController {
 
     // MARK: Actions
     @IBAction func loginButtonTap() {
-        attemptToLogin()
+        successfulLogin()
     }
 
     // MARK: Functions

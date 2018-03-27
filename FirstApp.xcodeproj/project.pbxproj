@@ -29,6 +29,12 @@
 		C4920480205AD8FF009E961D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C492047F205AD8FF009E961D /* User.swift */; };
 		C4920483205ADAEB009E961D /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4920481205ADAEB009E961D /* UserCell.swift */; };
 		C4920484205ADAEB009E961D /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4920482205ADAEB009E961D /* UserCell.xib */; };
+		C496B2772062BE2300D00F9D /* Repository.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C496B2762062BE2300D00F9D /* Repository.storyboard */; };
+		C496B2792062BE6D00D00F9D /* RepositoryInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C496B2782062BE6D00D00F9D /* RepositoryInfoView.xib */; };
+		C496B27B2062BFB000D00F9D /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C496B27A2062BFB000D00F9D /* RatingControl.swift */; };
+		C496B27D2062C03100D00F9D /* RepositoryInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C496B27C2062C03100D00F9D /* RepositoryInfoView.swift */; };
+		C496B27F2062C31100D00F9D /* RepositoryInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C496B27E2062C31100D00F9D /* RepositoryInfoController.swift */; };
+		C496B2812062CB5C00D00F9D /* RatingControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C496B2802062CB5C00D00F9D /* RatingControlView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +63,12 @@
 		C492047F205AD8FF009E961D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C4920481205ADAEB009E961D /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		C4920482205ADAEB009E961D /* UserCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
+		C496B2762062BE2300D00F9D /* Repository.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Repository.storyboard; sourceTree = "<group>"; };
+		C496B2782062BE6D00D00F9D /* RepositoryInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryInfoView.xib; sourceTree = "<group>"; };
+		C496B27A2062BFB000D00F9D /* RatingControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
+		C496B27C2062C03100D00F9D /* RepositoryInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryInfoView.swift; sourceTree = "<group>"; };
+		C496B27E2062C31100D00F9D /* RepositoryInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryInfoController.swift; sourceTree = "<group>"; };
+		C496B2802062CB5C00D00F9D /* RatingControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControlView.swift; sourceTree = "<group>"; };
 		F315593E960296F4CABE828F /* Pods-FirstApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirstApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FirstApp/Pods-FirstApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -128,10 +140,14 @@
 		C45F92592050451A00332E9B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C496B27A2062BFB000D00F9D /* RatingControl.swift */,
 				C45F925A2050456E00332E9B /* RepositoryCell.swift */,
 				C45F925B2050456E00332E9B /* RepositoryCell.xib */,
 				C4920481205ADAEB009E961D /* UserCell.swift */,
 				C4920482205ADAEB009E961D /* UserCell.xib */,
+				C496B27C2062C03100D00F9D /* RepositoryInfoView.swift */,
+				C496B2782062BE6D00D00F9D /* RepositoryInfoView.xib */,
+				C496B2802062CB5C00D00F9D /* RatingControlView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -142,6 +158,7 @@
 				C4455C8E203DE52A00A70056 /* LaunchScreen.storyboard */,
 				C4455C86203DE52A00A70056 /* Main.storyboard */,
 				C45F925F205046C800332E9B /* Repositories.storyboard */,
+				C496B2762062BE2300D00F9D /* Repository.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -161,6 +178,7 @@
 				C4455C84203DE52A00A70056 /* LoginController.swift */,
 				C45F926520504A5D00332E9B /* RepositoriesController.swift */,
 				C492047D205AD8E0009E961D /* FollowersController.swift */,
+				C496B27E2062C31100D00F9D /* RepositoryInfoController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -259,6 +277,8 @@
 				C4920484205ADAEB009E961D /* UserCell.xib in Resources */,
 				C4455C8D203DE52A00A70056 /* Assets.xcassets in Resources */,
 				C4455C88203DE52A00A70056 /* Main.storyboard in Resources */,
+				C496B2772062BE2300D00F9D /* Repository.storyboard in Resources */,
+				C496B2792062BE6D00D00F9D /* RepositoryInfoView.xib in Resources */,
 				C45F925D2050456E00332E9B /* RepositoryCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -334,15 +354,19 @@
 				C45F925C2050456E00332E9B /* RepositoryCell.swift in Sources */,
 				C48782B5204DB1A600144F3B /* Settings.swift in Sources */,
 				C48782B8204DB4EB00144F3B /* UITextField+Extensions.swift in Sources */,
+				C496B27B2062BFB000D00F9D /* RatingControl.swift in Sources */,
 				C4455C8B203DE52A00A70056 /* FirstApp.xcdatamodeld in Sources */,
 				C45F9258205040CB00332E9B /* Connection.swift in Sources */,
+				C496B27F2062C31100D00F9D /* RepositoryInfoController.swift in Sources */,
 				C4920480205AD8FF009E961D /* User.swift in Sources */,
 				C48782B2204DA42B00144F3B /* BaseClient.swift in Sources */,
 				C4920483205ADAEB009E961D /* UserCell.swift in Sources */,
 				C48782B0204DA42100144F3B /* SessionClient.swift in Sources */,
 				C45F926820504C8C00332E9B /* RepositoryClient.swift in Sources */,
 				C492047E205AD8E0009E961D /* FollowersController.swift in Sources */,
+				C496B2812062CB5C00D00F9D /* RatingControlView.swift in Sources */,
 				C45F9263205049DC00332E9B /* Repository.swift in Sources */,
+				C496B27D2062C03100D00F9D /* RepositoryInfoView.swift in Sources */,
 				C4455C85203DE52A00A70056 /* LoginController.swift in Sources */,
 				C4455C83203DE52A00A70056 /* AppDelegate.swift in Sources */,
 			);

@@ -16,10 +16,19 @@ final class RepositoriesController: UIViewController {
 
     private func configureTable() {
         reposTableView.dataSource = self
+        reposTableView.delegate = self
         reposTableView.register(
             UINib(nibName: cellId, bundle: nil),
             forCellReuseIdentifier: cellId
         )
+    }
+
+    fileprivate func showRepoInfo(repository: Repository) {
+        let sb = UIStoryboard(name: "Repository", bundle: nil)
+        if let vc = sb.instantiateInitialViewController() as? RepositoryInfoController {
+            vc.repository = repository
+            parent?.navigationController?.pushViewController(vc, animated: true)
+        }
     }
 
     private func dummyData() -> [Repository] {
@@ -32,6 +41,13 @@ final class RepositoriesController: UIViewController {
         ]
     }
 
+}
+
+// MARK:
+extension RepositoriesController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        showRepoInfo(repository: repos[indexPath.row])
+    }
 }
 
 // MARK: UITableViewDataSource
