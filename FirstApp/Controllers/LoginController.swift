@@ -17,35 +17,31 @@ class LoginController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        disposable?.dispose()
     }
 
     // MARK: Actions
     @IBAction func loginButtonTap() {
-        successfulLogin()
+        attemptToLogin()
     }
 
     // MARK: Functions
     private func attemptToLogin() {
-        let user = userTextField.textValue
-        let password = passwordTextField.textValue
+        showProgress()
 
-        sessionClient.login(user: user, password: password) { (result) in
-            if result == nil {
-
-            } else {
-                self.successfulLogin()
-            }
-        }
+        disposable = sessionClient.login(user: "", password: "").subscribe(
+            onNext: { self.successfulLogin($0) },
+            onError: { self.showError($0) },
+            onCompleted: { self.hideProgress() }
+        )
     }
 
-    private func successfulLogin() {
+    private func successfulLogin(_ token: AccessToken) {
         Settings.userMail = userTextField.textValue
         let storyboard = UIStoryboard(name: "Repositories", bundle: nil)
         if let controller = storyboard.instantiateInitialViewController() {
             present(controller, animated: true)
         }
     }
-
 }
 

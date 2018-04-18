@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A7292216D71228911C81CB67 /* Pods_FirstApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6280289708F7339874C11331 /* Pods_FirstApp.framework */; };
+		C43DB1F8206AB0FA00774271 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43DB1F7206AB0FA00774271 /* UIViewController+Extensions.swift */; };
 		C4455C83203DE52A00A70056 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4455C82203DE52A00A70056 /* AppDelegate.swift */; };
 		C4455C85203DE52A00A70056 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4455C84203DE52A00A70056 /* LoginController.swift */; };
 		C4455C88203DE52A00A70056 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4455C86203DE52A00A70056 /* Main.storyboard */; };
@@ -35,11 +36,13 @@
 		C496B27D2062C03100D00F9D /* RepositoryInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C496B27C2062C03100D00F9D /* RepositoryInfoView.swift */; };
 		C496B27F2062C31100D00F9D /* RepositoryInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C496B27E2062C31100D00F9D /* RepositoryInfoController.swift */; };
 		C496B2812062CB5C00D00F9D /* RatingControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C496B2802062CB5C00D00F9D /* RatingControlView.swift */; };
+		C4E473C42069D86B00C2A903 /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E473C32069D86B00C2A903 /* AccessToken.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		017AF8666FC026910950E335 /* Pods-FirstApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirstApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-FirstApp/Pods-FirstApp.release.xcconfig"; sourceTree = "<group>"; };
 		6280289708F7339874C11331 /* Pods_FirstApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirstApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C43DB1F7206AB0FA00774271 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		C4455C7F203DE52A00A70056 /* FirstApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirstApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4455C82203DE52A00A70056 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4455C84203DE52A00A70056 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
@@ -69,6 +72,7 @@
 		C496B27C2062C03100D00F9D /* RepositoryInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryInfoView.swift; sourceTree = "<group>"; };
 		C496B27E2062C31100D00F9D /* RepositoryInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryInfoController.swift; sourceTree = "<group>"; };
 		C496B2802062CB5C00D00F9D /* RatingControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControlView.swift; sourceTree = "<group>"; };
+		C4E473C32069D86B00C2A903 /* AccessToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessToken.swift; sourceTree = "<group>"; };
 		F315593E960296F4CABE828F /* Pods-FirstApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirstApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FirstApp/Pods-FirstApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -167,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				C45F9262205049DC00332E9B /* Repository.swift */,
+				C4E473C32069D86B00C2A903 /* AccessToken.swift */,
 				C492047F205AD8FF009E961D /* User.swift */,
 			);
 			path = Models;
@@ -206,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				C48782B7204DB4EB00144F3B /* UITextField+Extensions.swift */,
+				C43DB1F7206AB0FA00774271 /* UIViewController+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -294,6 +300,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-FirstApp/Pods-FirstApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
@@ -301,6 +308,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
@@ -360,6 +368,7 @@
 				C496B27F2062C31100D00F9D /* RepositoryInfoController.swift in Sources */,
 				C4920480205AD8FF009E961D /* User.swift in Sources */,
 				C48782B2204DA42B00144F3B /* BaseClient.swift in Sources */,
+				C43DB1F8206AB0FA00774271 /* UIViewController+Extensions.swift in Sources */,
 				C4920483205ADAEB009E961D /* UserCell.swift in Sources */,
 				C48782B0204DA42100144F3B /* SessionClient.swift in Sources */,
 				C45F926820504C8C00332E9B /* RepositoryClient.swift in Sources */,
@@ -369,6 +378,7 @@
 				C496B27D2062C03100D00F9D /* RepositoryInfoView.swift in Sources */,
 				C4455C85203DE52A00A70056 /* LoginController.swift in Sources */,
 				C4455C83203DE52A00A70056 /* AppDelegate.swift in Sources */,
+				C4E473C42069D86B00C2A903 /* AccessToken.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

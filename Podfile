@@ -6,4 +6,5 @@ target 'FirstApp' do
   pod 'SwiftyJSON', '4.0.0'
   pod 'RxSwift', '4.1.2'
   pod 'RxCocoa', '4.1.2'
+  pod 'MBProgressHUD', '1.1.0'
 end

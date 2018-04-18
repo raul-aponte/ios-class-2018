@@ -4,7 +4,7 @@ final class RepositoriesController: UIViewController {
     private let cellId = "RepositoryCell"
     fileprivate var repos = [Repository]()
     
-    @IBOutlet weak var userLabel: UILabel!
+    @IBOutlet private weak var userLabel: UILabel!
     @IBOutlet weak var reposTableView: UITableView!
 
     override func viewDidLoad() {
