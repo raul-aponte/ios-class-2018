@@ -1,17 +1,30 @@
 import UIKit
 
-final class RepositoriesController: UIViewController {
+final class RepositoriesController: BaseController {
+    private let reposClient = RepositoryClient()
     private let cellId = "RepositoryCell"
-    fileprivate var repos = [Repository]()
+    fileprivate var repos = [Repository]() {
+        didSet {
+            reposTableView.reloadData()
+        }
+    }
     
     @IBOutlet private weak var userLabel: UILabel!
     @IBOutlet weak var reposTableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         configureTable()
-        repos = dummyData()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        fetchRepos()
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        disposable?.dispose()
     }
 
     private func configureTable() {
@@ -23,6 +36,19 @@ final class RepositoriesController: UIViewController {
         )
     }
 
+    private func fetchRepos() {
+        guard let user = Settings.currentUser else {
+            return
+        }
+        userLabel.text = user
+        showProgress()
+        disposable = reposClient.getRepos(forUser: user).subscribe(
+            onNext: { self.repos = $0 },
+            onError: { self.showError($0) },
+            onCompleted: { self.hideProgress() }
+        )
+    }
+
     fileprivate func showRepoInfo(repository: Repository) {
         let sb = UIStoryboard(name: "Repository", bundle: nil)
         if let vc = sb.instantiateInitialViewController() as? RepositoryInfoController {
@@ -30,20 +56,9 @@ final class RepositoriesController: UIViewController {
             parent?.navigationController?.pushViewController(vc, animated: true)
         }
     }
-
-    private func dummyData() -> [Repository] {
-        return [
-            Repository(name: "Blah 1"),
-            Repository(name: "Blah 2"),
-            Repository(name: "Blah 3"),
-            Repository(name: "Blah 4"),
-            Repository(name: "Blah 5"),
-        ]
-    }
-
 }
 
-// MARK:
+// MARK: UITableViewDelegate
 extension RepositoriesController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         showRepoInfo(repository: repos[indexPath.row])

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ptI-AG-51h">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ptI-AG-51h">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,26 +19,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fxS-Uf-aGM">
-                                <rect key="frame" x="16" y="130" width="382" height="537"/>
+                                <rect key="frame" x="16" y="101" width="382" height="566"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g8p-Sx-W8i">
-                                <rect key="frame" x="20" y="72" width="374" height="50"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="0UH-iO-9vp"/>
-                                </constraints>
-                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tBJ-im-mhh">
+                                <rect key="frame" x="20" y="72" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="OD1-hv-OK2" firstAttribute="bottom" secondItem="fxS-Uf-aGM" secondAttribute="bottom" constant="20" id="6yD-MS-SUm"/>
                             <constraint firstItem="OD1-hv-OK2" firstAttribute="trailing" secondItem="fxS-Uf-aGM" secondAttribute="trailing" constant="16" id="EBQ-pF-QTA"/>
                             <constraint firstItem="fxS-Uf-aGM" firstAttribute="leading" secondItem="OD1-hv-OK2" secondAttribute="leading" constant="16" id="F4A-7y-3we"/>
-                            <constraint firstItem="OD1-hv-OK2" firstAttribute="trailing" secondItem="g8p-Sx-W8i" secondAttribute="trailing" constant="20" id="Ho7-TC-fQp"/>
-                            <constraint firstItem="g8p-Sx-W8i" firstAttribute="leading" secondItem="OD1-hv-OK2" secondAttribute="leading" constant="20" id="JfX-eA-Ire"/>
-                            <constraint firstItem="fxS-Uf-aGM" firstAttribute="top" secondItem="g8p-Sx-W8i" secondAttribute="bottom" constant="8" id="NiW-7X-8ii"/>
-                            <constraint firstItem="g8p-Sx-W8i" firstAttribute="top" secondItem="OD1-hv-OK2" secondAttribute="top" constant="8" id="iwU-b3-8RR"/>
+                            <constraint firstItem="tBJ-im-mhh" firstAttribute="top" secondItem="OD1-hv-OK2" secondAttribute="top" constant="8" id="Nym-Vf-fmp"/>
+                            <constraint firstItem="OD1-hv-OK2" firstAttribute="trailing" secondItem="tBJ-im-mhh" secondAttribute="trailing" constant="20" id="SJ2-Wl-3bb"/>
+                            <constraint firstItem="fxS-Uf-aGM" firstAttribute="top" secondItem="tBJ-im-mhh" secondAttribute="bottom" constant="8" id="gpz-88-8vV"/>
+                            <constraint firstItem="tBJ-im-mhh" firstAttribute="leading" secondItem="OD1-hv-OK2" secondAttribute="leading" constant="20" id="uEu-gW-YUu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OD1-hv-OK2"/>
                     </view>
@@ -48,6 +47,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="reposTableView" destination="fxS-Uf-aGM" id="Drn-Lv-tuM"/>
+                        <outlet property="userLabel" destination="tBJ-im-mhh" id="O3X-Jp-8M6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UZm-Vd-3da" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -96,6 +96,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="followersCollectionView" destination="iBO-oJ-sW6" id="BAh-UN-PXf"/>
+                        <outlet property="userLabel" destination="faa-LL-dyv" id="Pbl-8H-0xm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="69f-C6-e79" userLabel="First Responder" sceneMemberID="firstResponder"/>

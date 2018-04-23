@@ -1,17 +1,9 @@
-import Alamofire
+import RxSwift
 
 class RepositoryClient: BaseClient {
-    func getRepos(forUser user: String, callback: @escaping ([Repository]) -> Void) {
-        
-        Alamofire.request("repos", method: .get, parameters: [:], encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
-            print(response)
-            response.result.ifSuccess {
-                //callback("")
-            }
-            response.result.ifFailure {
-                //callback(nil)
-            }
-
-        }
+    func getRepos(forUser user: String) -> Observable<[Repository]> {
+        return request(get: "users/\(user)/repos").map({ json -> [Repository] in
+            return json.arrayValue.compactMap({ Repository(json: $0) })
+        })
     }
 }

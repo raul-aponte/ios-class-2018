@@ -3,7 +3,7 @@ import SwiftyJSON
 import Alamofire
 
 class BaseClient {
-    private final let baseUrl = "https://api.github.com"
+    private final let baseUrl = "https://api.github.com/"
     let headers = ["Accept": "application/vnd.github.v3+json"]
 
     func request(get endpoint: String, params: [String: Any]? = nil) -> Observable<JSON> {

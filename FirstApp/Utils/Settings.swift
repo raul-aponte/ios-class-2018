@@ -1,16 +1,16 @@
 import Foundation
 
 class Settings {
-    private static let userMailKey = "currentUserEmail"
+    private static let currentUserKey = "currentUser"
 
-    public static var userMail: String? {
+    public static var currentUser: String? {
         get {
             let defaults = UserDefaults.standard
-            return defaults.string(forKey: userMailKey)
+            return defaults.string(forKey: currentUserKey)
         }
         set {
             let defaults = UserDefaults.standard
-            defaults.set(newValue, forKey: userMailKey)
+            defaults.set(newValue, forKey: currentUserKey)
         }
     }
 }

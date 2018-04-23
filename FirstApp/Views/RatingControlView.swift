@@ -12,7 +12,7 @@ class RatingControlView: UIView {
     }
     
     var ratingButtons: [UIButton] {
-        return subviews.flatMap { $0 as? UIButton }
+        return subviews.compactMap { $0 as? UIButton }
     }
 
     required init?(coder aDecoder: NSCoder) {

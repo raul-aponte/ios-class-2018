@@ -1,23 +1,16 @@
 import UIKit
 import RxSwift
 
-class LoginController: UIViewController {
+class LoginController: BaseController {
 
-    private let sessionClient = SessionClient()
-    private var disposable: Disposable?
+    private let sessionClient = UserClient()
 
     // MARK: Controls
     @IBOutlet weak var userTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        disposable?.dispose()
     }
 
     // MARK: Actions
@@ -27,17 +20,27 @@ class LoginController: UIViewController {
 
     // MARK: Functions
     private func attemptToLogin() {
+        let user = userTextField.textValue
+        if user.isEmpty {
+            showAlert("User is empty") {
+                self.userTextField.becomeFirstResponder()
+            }
+            return
+        }
         showProgress()
-
-        disposable = sessionClient.login(user: "", password: "").subscribe(
+        disposable = sessionClient.login(user: user).subscribe(
             onNext: { self.successfulLogin($0) },
             onError: { self.showError($0) },
             onCompleted: { self.hideProgress() }
         )
     }
 
-    private func successfulLogin(_ token: AccessToken) {
-        Settings.userMail = userTextField.textValue
+    private func successfulLogin(_ user: User?) {
+        guard let user = user else {
+            showAlert("User not found")
+            return
+        }
+        Settings.currentUser = user.login
         let storyboard = UIStoryboard(name: "Repositories", bundle: nil)
         if let controller = storyboard.instantiateInitialViewController() {
             present(controller, animated: true)

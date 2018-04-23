@@ -1,17 +1,31 @@
 import UIKit
 
-class FollowersController: UIViewController, UICollectionViewDataSource {
+class FollowersController: BaseController, UICollectionViewDataSource {
+    private let userClient = UserClient()
     private let cellId = "UserCell"
 
-    private var followers = [User]()
+    private var followers = [User]() {
+        didSet {
+            followersCollectionView.reloadData()
+        }
+    }
 
+    @IBOutlet private weak var userLabel: UILabel!
     @IBOutlet weak var followersCollectionView: UICollectionView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        followers = dummyData()
         configCollection()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        fetchFollowers()
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        disposable?.dispose()
     }
 
     private func configCollection() {
@@ -22,11 +36,17 @@ class FollowersController: UIViewController, UICollectionViewDataSource {
         )
     }
 
-    private func dummyData() -> [User] {
-        return [
-            User(name: "bla 1"),
-            User(name: "blah 2")
-        ]
+    private func fetchFollowers() {
+        guard let user = Settings.currentUser else {
+            return
+        }
+        userLabel.text = user
+        showProgress()
+        disposable =  userClient.getFollowers(forUser: user).subscribe(
+            onNext: { self.followers = $0 },
+            onError: { self.showError($0) },
+            onCompleted: { self.hideProgress() }
+        )
     }
 
     // MARK: UICollectionViewDataSource
