@@ -17,9 +17,24 @@
                     <view key="view" contentMode="scaleToFill" id="EsY-9T-ANg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Syf-4T-h7b" customClass="RepositoryInfoView" customModule="FirstApp" customModuleProvider="target">
+                                <rect key="frame" x="16" y="28" width="343" height="619"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="KeY-bc-M3h" firstAttribute="trailing" secondItem="Syf-4T-h7b" secondAttribute="trailing" constant="16" id="EEt-9V-udv"/>
+                            <constraint firstItem="KeY-bc-M3h" firstAttribute="bottom" secondItem="Syf-4T-h7b" secondAttribute="bottom" constant="20" id="YJX-2j-dFK"/>
+                            <constraint firstItem="Syf-4T-h7b" firstAttribute="top" secondItem="KeY-bc-M3h" secondAttribute="top" constant="8" id="imc-39-nwS"/>
+                            <constraint firstItem="Syf-4T-h7b" firstAttribute="leading" secondItem="KeY-bc-M3h" secondAttribute="leading" constant="16" id="r4D-tA-iqH"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="KeY-bc-M3h"/>
                     </view>
+                    <connections>
+                        <outlet property="repositoryInfoView" destination="Syf-4T-h7b" id="vMn-9z-83H"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TMz-o1-G6q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

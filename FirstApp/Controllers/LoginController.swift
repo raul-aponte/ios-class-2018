@@ -3,7 +3,7 @@ import RxSwift
 
 class LoginController: BaseController {
 
-    private let sessionClient = UserClient()
+    private let userClient = UserClient()
 
     // MARK: Controls
     @IBOutlet weak var userTextField: UITextField!
@@ -28,7 +28,7 @@ class LoginController: BaseController {
             return
         }
         showProgress()
-        disposable = sessionClient.login(user: user).subscribe(
+        disposable = userClient.login(user: user).subscribe(
             onNext: { self.successfulLogin($0) },
             onError: { self.showError($0) },
             onCompleted: { self.hideProgress() }

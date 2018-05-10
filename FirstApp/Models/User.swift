@@ -1,8 +1,8 @@
 import SwiftyJSON
 
 struct User {
-    var login: String?
-    var id: Int?
+    var login: String
+    var id: Int
     var avatarUrl: String?
     var gravatarId: String?
     var url: String?
@@ -33,10 +33,11 @@ struct User {
     var updatedAt: Date?
 
     init?(json: JSON) {
-        guard let _id = json["id"].int else {
+        guard let _id = json["id"].int,
+            let _login = json["login"].string else {
             return nil
         }
-        login = json["login"].string
+        login = _login
         id = _id
         avatarUrl = json["avatar_url"].string
         gravatarId = json["gravatar_id"].string
