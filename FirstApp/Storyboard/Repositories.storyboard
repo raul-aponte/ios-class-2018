@@ -121,12 +121,18 @@
             </objects>
             <point key="canvasLocation" x="914" y="32"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--User Tab Bar Controller-->
         <scene sceneID="0KB-UR-Srq">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="cF3-X8-7hQ" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="cF3-X8-7hQ" customClass="UserTabBarController" customModule="FirstApp" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="2p8-ne-Uqt"/>
+                    <navigationItem key="navigationItem" id="2p8-ne-Uqt">
+                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="myX-nX-zZy">
+                            <connections>
+                                <action selector="closeButtonTap:" destination="cF3-X8-7hQ" id="OBy-9w-kNW"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6eW-RQ-fDF">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
